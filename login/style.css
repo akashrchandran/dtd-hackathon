@@ -2,8 +2,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: url(bg.jpg) no-repeat center;
-    background-size: 700px;
+    background: url(images/bg_r.jpg) no-repeat;
+    background-size: cover;
     background-position: left;
     background-color: #fff;
   }
@@ -11,19 +11,40 @@ body {
   /* Max width container styles */
   
   .max-width {
-    max-width: 600px;
-    margin: 0 0 0 50%;
-    padding: 50px 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 50px;
   }
   
   /* Login box styles */
   
   .box {
-    background-color: #cacae6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
     border-radius: 10px;
-    padding: 50px 30px;
+    
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
+
+  .left {
+    flex-basis: 50%;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    }
+    
+    .left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    
+    .right {
+    flex-basis: 50%;
+    padding: 20px;
+    }
   
   /* Logo styles */
   .logo {
@@ -32,7 +53,7 @@ body {
   }
   
   .logo img {
-    max-width: 20%;
+    max-width: 50%;
   }
   
   /* Description styles */
@@ -41,13 +62,12 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
   .des span {
-    font-weight: normal;
-    font-variant: small-caps;
+    color: #ed2980;
   }
   
   /* Button styles */
@@ -55,7 +75,7 @@ body {
   button {
     display: block;
     width: 100%;
-    height: 50px;
+    height: 45px;
     background: none;
     border: 2px solid #000;
     color: #000;
@@ -128,10 +148,10 @@ body {
   
   /* Input styles */
   
-  input[type="text"] {
+  input[type="text"],input[type="password"] {
     display: block;
-    width: 100%;
-    height: 50px;
+    width: 95%;
+    height: 24px;
     border: 1px solid #000;
     border-radius: 5px;
     padding: 10px;
@@ -191,7 +211,7 @@ body {
   
   .new {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 16px;
     color: #000;
     text-align: center;
