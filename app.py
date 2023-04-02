@@ -8,10 +8,10 @@ app.config["SESSION_PERMANENT"] =  False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-def register_user_to_db(username, password):
+def register_user_to_db(email, password, name, patient):
     con = sqlite3.connect('database.db')
     cur = con.cursor()
-    cur.execute('INSERT INTO users(username,password) values (?,?)', (username, password))
+    cur.execute('INSERT INTO users(email,password, name, patient) values (?,?,?,?)', (email, password, name, patient))
     con.commit()
     con.close()
 
@@ -34,17 +34,19 @@ def index():
 def register():
     if request.method != 'POST':
         return render_template('register.html')
-    username = request.form['username']
+    print("POST")
+    email = request.form['email']
     password = request.form['password']
-
-    register_user_to_db(username, password)
-    return redirect(url_for('index'))
+    name = request.form['f_name'] + " " + request.form['l_name']
+    patient = bool(request.form['patient'])
+    register_user_to_db(email, password, name, patient)
+    return redirect(url_for('login'))
 
 
 @app.route('/login', methods=["POST", "GET"])
 def login():
     if request.method != 'POST':
-        return redirect(url_for('index'))
+        return render_template('login.html')
     email = request.form['email']
     password = request.form['password']
     if res := check_user(email, password):

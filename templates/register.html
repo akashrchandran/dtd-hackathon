@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -17,7 +17,7 @@
           </div>
           <div class="row clearfix">
             <div class="">
-              <form>
+              <form action="register" method="post">
                 <div class="input_field"> <span><i aria-hidden="true" class="fa-solid fa-envelope"></i></span>
                   <input type="email" name="email" placeholder="Email" required />
                 </div>
@@ -30,26 +30,26 @@
                 <div class="row clearfix">
                   <div class="col_half">
                     <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                      <input type="text" name="name" placeholder="First Name" />
+                      <input type="text" name="f_name" placeholder="First Name" />
                     </div>
                   </div>
                   <div class="col_half">
                     <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                      <input type="text" name="name" placeholder="Last Name" required />
+                      <input type="text" name="l_name" placeholder="Last Name" required />
                     </div>
                   </div>
                 </div>
-                      <div class="input_field radio_option">
+                    <div class="input_field radio_option">
                     <input type="radio" name="radiogroup1" id="rd1">
                     <label for="rd1">Male</label>
                     <input type="radio" name="radiogroup1" id="rd2">
                     <label for="rd2">Female</label>
                     </div>
                     <div class="input_field select_option">
-                      <select>
+                      <select name="patient">
                         <option>Select the role</option>
-                        <option>Doctor</option>
-                        <option>Patient</option>
+                        <option value="">Doctor</option>
+                        <option value="true">Patient</option>
                       </select>
                       <div class="select_arrow"></div>
                     </div>
@@ -59,6 +59,7 @@
                   </div>
                 <input class="button" type="submit" value="Register" />
               </form>
+              <div class="new">Already a User? Then <a href="/login">login in</a></div>
             </div>
           </div>
         </div>
