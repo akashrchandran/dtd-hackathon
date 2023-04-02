@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+    <div class="max-width">
+        <div class="box">
+            <div class="left">
+                <img src="{{ url_for('static', filename='images/bg.jpg') }}" alt="">
+            </div>
+            <div class="right">
+                <div class="logo"><img src="{{ url_for('static', filename='/images/pharam_care_logo.png') }}"></div>
+                <p class="des">Connected<span> Care </span>Coordination</p>
+                <button type="submit">
+                    <div class="logo-2"><img src="{{ url_for('static', filename='/images/google.png') }}" alt=""></div>
+                    <p>Continue with Google</p>
+                </button>
+                <button type="submit">
+                    <div class="logo-2"><img src="{{ url_for('static', filename='images/apple.png') }}" alt=""></div>
+                    <p>Continue with Apple</p>
+                </button>
+                <div class="or">
+                    <div class="line"></div>
+                    <p>or</p>
+                    <div class="line"></div>
+                </div>
+                <form action="/login" method="post">
+                    <input type="text" name="email" id="" placeholder="Email address">
+                    <input type="password" name="password" id="" placeholder="Password">
+                    <button class="login" type="submit">Continue</button>
+                </form>
+                <div class="new">Don't have an account</div>
+                <a href="#">Create account</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
