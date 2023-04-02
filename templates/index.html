@@ -7,27 +7,24 @@
   <title>Phame care </title>
   <meta name="description" content>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="manifest" href="site.webmanifest">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/slicknav.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="css/fontawesome-all.min.css">
-  <link rel="stylesheet" href="css/themify-icons.css">
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/nice-select.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/slicknav.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/themify-icons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nice-select.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <script defer referrerpolicy="origin" src="js/s.js"></script>
-  <script
-    nonce="4ae202ed-79d4-41c8-9957-6a85a1ccd7f0">(function (w, d) { !function (bv, bw, bx, by) { bv[bx] = bv[bx] || {}; bv[bx].executed = []; bv.zaraz = { deferred: [], listeners: [] }; bv.zaraz.q = []; bv.zaraz._f = function (bz) { return function () { var bA = Array.prototype.slice.call(arguments); bv.zaraz.q.push({ m: bz, a: bA }) } }; for (const bB of ["track", "set", "debug"]) bv.zaraz[bB] = bv.zaraz._f(bB); bv.zaraz.init = () => { var bC = bw.getElementsByTagName(by)[0], bD = bw.createElement(by), bE = bw.getElementsByTagName("title")[0]; bE && (bv[bx].t = bw.getElementsByTagName("title")[0].text); bv[bx].x = Math.random(); bv[bx].w = bv.screen.width; bv[bx].h = bv.screen.height; bv[bx].j = bv.innerHeight; bv[bx].e = bv.innerWidth; bv[bx].l = bv.location.href; bv[bx].r = bw.referrer; bv[bx].k = bv.screen.colorDepth; bv[bx].n = bw.characterSet; bv[bx].o = (new Date).getTimezoneOffset(); if (bv.dataLayer) for (const bI of Object.entries(Object.entries(dataLayer).reduce(((bJ, bK) => ({ ...bJ[1], ...bK[1] }))))) zaraz.set(bI[0], bI[1], { scope: "page" }); bv[bx].q = []; for (; bv.zaraz.q.length;) { const bL = bv.zaraz.q.shift(); bv[bx].q.push(bL) } bD.defer = !0; for (const bM of [localStorage, sessionStorage]) Object.keys(bM || {}).filter((bO => bO.startsWith("_zaraz_"))).forEach((bN => { try { bv[bx]["z_" + bN.slice(7)] = JSON.parse(bM.getItem(bN)) } catch { bv[bx]["z_" + bN.slice(7)] = bM.getItem(bN) } })); bD.referrerPolicy = "origin"; bD.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bv[bx]))); bC.parentNode.insertBefore(bD, bC) };["complete", "interactive"].includes(bw.readyState) ? zaraz.init() : bv.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
-</head>
+  <script defer referrerpolicy="origin" src="{{ url_for('static', filename='js/s.js') }}"></script>
+ </head>
 <body>
 
   <div id="preloader-active">
@@ -35,7 +32,7 @@
       <div class="preloader-inner position-relative">
         <div class="preloader-circle"></div>
         <div class="preloader-img pere-text">
-          <img src="images/pharam_care_logo.png" alt>
+          <img src="{{ url_for('static', filename='images/pharam_care_logo.png') }}" alt>
         </div>
       </div>
     </div>
@@ -50,7 +47,7 @@
 
             <div class="col-xl-2 col-lg-2 col-md-1">
               <div class="logo">
-                <a href="index.html"><img src="images/pharam_care_logo.png" alt="" width="128" height="38"></a>
+                <a href="index.html"><img src="{{ url_for('static', filename='images/pharam_care_logo.png') }}" alt="" width="128" height="38"></a>
               </div>
             </div>
             <div class="col-xl-8 col-lg-8 col-md-8">
@@ -88,8 +85,7 @@
 
     <div class="slider-area ">
       <div class="slider-active">
-        <div class="single-slider slider-height d-flex align-items-center"
-          data-background="assets/img/hero/h1_hero.png">
+        <div class="single-slider slider-height d-flex align-items-center">
           <div class="container">
             <div class="row d-flex align-items-center">
               <div class="col-lg-7 col-md-9 ">
@@ -98,7 +94,7 @@
                   <p data-animation="fadeInLeft" data-delay=".6s"> This is a website that contains information about an individual's health and medical history. It is usually issued by a healthcare provider, such as a hospital, clinic,doctors with high security</p>
 
                   <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s">
-                    <a href="industries.html" class="btn hero-btn">Contact Us</a>
+                    <a href="/register" class="btn hero-btn">Get Started</a>
                   </div>
                 </div>
               </div>
@@ -128,7 +124,7 @@
               </div>
               <div class="col-lg-5">
                 <div class="hero__img d-none d-lg-block" data-animation="fadeInRight" data-delay="1s">
-                  <img src="images/hero_right.png" alt>
+                  <img src="{{ url_for('static', filename='images/hero_right.png') }}" alt>
                 </div>
               </div>
             </div>
@@ -153,7 +149,11 @@
             <div class="single-do text-center mb-30">
               <div class="do-icon">
                 <br>
-                <img src="images/padlock.png" alt width="60px" height="60px">
+                <svg xmlns="http://www.w3.org/2000/svg" style="color: #ff5c97;" width="60" height="60" fill="currentColor" class="bi bi-file-earmark-lock" viewBox="0 0 16 16">
+                  <path d="M10 7v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V9.3c0-.627.46-1.058 1-1.224V7a2 2 0 1 1 4 0zM7 7v1h2V7a1 1 0 0 0-2 0zM6 9.3v2.4c0 .042.02.107.105.175A.637.637 0 0 0 6.5 12h3a.64.64 0 0 0 .395-.125c.085-.068.105-.133.105-.175V9.3c0-.042-.02-.107-.105-.175A.637.637 0 0 0 9.5 9h-3a.637.637 0 0 0-.395.125C6.02 9.193 6 9.258 6 9.3z"/>
+                  <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                </svg>
+                <!-- <img src="{{ url_for('static', filename='images/padlock.png') }}" alt width="60px" height="60px"> -->
               </div>
               <br>
               <br>
@@ -162,7 +162,9 @@
                 <p>Personal data is increasingly collected, stored, and shared by various doctors with high security<br><br></p>
               </div>
               <div class="do-btn">
-                <a href="#"><i class="ti-arrow-right"></i> get started</a>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg> get started</a>
               </div>
             </div>
           </div>
@@ -170,16 +172,21 @@
             <div class="single-do active text-center mb-30">
               <div class="do-icon">
                 <br>
-                <img src="images/google-docs.png" alt width="60px" height="60px">
+                <svg xmlns="http://www.w3.org/2000/svg" style="color: #ff5c97;" width="60" height="60" fill="currentColor" class="bi bi-cloud-upload-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0zm-.5 14.5V11h1v3.5a.5.5 0 0 1-1 0z"/>
+                </svg>
+                <!-- <img src="{{ url_for('static', filename='images/google-docs.png') }}" alt width="60px" height="60px"> -->
               </div>
               <br>
               <br>
               <div class="do-caption">
-                <h4>Document</h4>
-                <p>Doctors are allowded to upload documents about the health condition of patients</p>
+                <h4>Document upload</h4>
+                <p>Doctors are allowded to upload documents about the health condition of patients.</p>
               </div>
               <div class="do-btn">
-                <a href="#"><i class="ti-arrow-right"></i> get started</a>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg> get started</a>
               </div>
             </div>
           </div>
@@ -187,7 +194,7 @@
             <div class="single-do text-center mb-30">
               <div class="do-icon">
                 <br>
-                <img src="images/telemedicine.png" alt width="60px" height="60px">
+                <img src="{{ url_for('static', filename='images/telemedicine.png') }}"  alt width="60px" height="60px">
               </div>
               <div class="do-caption">
                 <br>
@@ -196,7 +203,9 @@
                 <p>Medical diagnosis, treatment, and advice to patients who are not physically present at hospital</p>
               </div>
               <div class="do-btn">
-                <a href="#"><i class="ti-arrow-right"></i> get started</a>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg> get started</a>
               </div>
             </div>
           </div>
@@ -210,7 +219,7 @@
         <div class="row d-flex align-items-end">
           <div class="col-lg-6 col-md-12">
             <div class="we-create-img">
-              <img src="images/we-create.png" alt>
+              <img src="{{ url_for('static', filename='images/we-create.png') }}" alt>
             </div>
           </div>
           <div class="col-lg-6 col-md-12">
@@ -647,35 +656,35 @@
   </footer>
 
 
-  <script src="js/modernizr-3.5.0.min.js"></script>
+  <script src="{{ url_for('static', filename='js/modernizr-3.5.0.min.js') }}"></script>
 
-  <script src="js/jquery-1.12.4.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='js/jquery-1.12.4.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
-  <script src="js/jquery.slicknav.min.js"></script>
+  <script src="{{ url_for('static', filename='js/jquery.slicknav.min.js') }}"></script>
 
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/slick.min.js"></script>
+  <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
 
-  <script src="js/gijgo.min.js"></script>
+  <script src="{{ url_for('static', filename='js/gijgo.min.js') }}"></script>
 
-  <script src="js/wow.min.js"></script>
-  <script src="js/animated.headline.js"></script>
-  <script src="js/jquery.magnific-popup.js"></script>
+  <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/animated.headline.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js') }}"></script>
 
-  <script src="js/jquery.scrollUp.min.js"></script>
-  <script src="js/jquery.nice-select.min.js"></script>
-  <script src="js/jquery.sticky.js"></script>
+  <script src="{{ url_for('static', filename='js/jquery.scrollUp.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.nice-select.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
 
-  <script src="js/contact.js"></script>
-  <script src="js/jquery.form.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
-  <script src="js/mail-script.js"></script>
-  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.form.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/mail-script.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
 
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 </body>
 

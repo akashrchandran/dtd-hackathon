@@ -21,13 +21,13 @@ def check_user(email, password):
     cur = con.cursor()
     cur.execute('Select user_id,email,password FROM users WHERE email=? and password=?', (email, password))
     res = cur.fetchone()
-    print(res)
+    con.close()
     return res
 
 
 @app.route("/")
 def index():
-    return render_template('login.html')
+    return render_template('index.html')
 
 
 @app.route('/register', methods=["POST", "GET"])
