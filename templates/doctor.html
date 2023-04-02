@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctors Form</title>
-    <link rel="stylesheet" href="css/doctor.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
     <link rel="icon" href="img/icon.png">
 </head>
 <html>
@@ -169,6 +169,10 @@
           <button type="submit" id="submit" class="submit-button">
             Submit
           </button>
+          <br>
+          <a href="/logout" style="all: unset;"><button type="button" id="submit" class="submit-button">
+            Logout
+          </button></a>
         </div>
       </form>
     </div>

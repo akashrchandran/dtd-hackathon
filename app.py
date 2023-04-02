@@ -15,6 +15,14 @@ def register_user_to_db(email, password, name, patient):
     con.commit()
     con.close()
 
+def get_user(user_id):
+    con = sqlite3.connect('database.db')
+    cur = con.cursor()
+    res = cur.execute('Select * FROM users WHERE user_id=?', str(user_id))
+    res = res.fetchone()
+    con.commit()
+    con.close()
+    return res
 
 def check_user(email, password):
     con = sqlite3.connect('database.db')
@@ -57,11 +65,14 @@ def login():
 
 @app.route('/home', methods=['POST', "GET"])
 def home():
-    print(session)
-    if 'user_id' in session:
-        return render_template('home.html')
-    else:
+    if 'user_id' not in session:
         return "Username or Password is wrong!"
+    details = get_user(session['user_id'])
+    return (
+        render_template('patient.html', details=details)
+        if details[4]
+        else render_template('doctor.html', details=details)
+    )
 
 
 @app.route('/logout')
