@@ -4,7 +4,9 @@ body {
     font-family: Arial, sans-serif;
     background: url(images/bg_r.jpg) no-repeat;
     background-size: cover;
+    height: 100vh;
     background-position: left;
+    overflow: hidden;
     background-color: #fff;
   }
   
@@ -20,11 +22,11 @@ body {
   
   .box {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     background-color: #fff;
     border-radius: 10px;
-    
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
 

@@ -16,11 +16,13 @@ def register_user_to_db(username, password):
     con.close()
 
 
-def check_user(username, password):
+def check_user(email, password):
     con = sqlite3.connect('database.db')
     cur = con.cursor()
-    cur.execute('Select username,password FROM users WHERE username=? and password=?', (username, password))
-    return bool(cur.fetchone())
+    cur.execute('Select user_id,email,password FROM users WHERE email=? and password=?', (email, password))
+    res = cur.fetchone()
+    print(res)
+    return res
 
 
 @app.route("/")
@@ -43,13 +45,10 @@ def register():
 def login():
     if request.method != 'POST':
         return redirect(url_for('index'))
-    username = request.form['username']
+    email = request.form['email']
     password = request.form['password']
-    print(username, password)
-    print(check_user(username, password))
-    if check_user(username, password):
-        print("saved")
-        session['username'] = username
+    if res := check_user(email, password):
+        session['user_id'] = res[0]
         session.modified = True
     return redirect(url_for('home'))
 
@@ -57,8 +56,8 @@ def login():
 @app.route('/home', methods=['POST', "GET"])
 def home():
     print(session)
-    if 'username' in session:
-        return render_template('home.html', username=session['username'])
+    if 'user_id' in session:
+        return render_template('home.html')
     else:
         return "Username or Password is wrong!"
 
