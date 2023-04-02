@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors Form</title>
+    <link rel="stylesheet" href="patient.css">
+    <link rel="icon" href="img/icon.png">
+</head>
+<html>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">Patient details verification</h1>
+      </header>
+      <form id="survey-form">
+        <div class="form-group">
+          <label id="name-label" for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="Enter your name"
+            required/>
+        </div>
+        <div class="form-group">
+          <label id="email-label" for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter your Email"
+            required/>
+        </div>
+        <div class="form-group">
+          <label id="number-label" for="number"
+            >Age<span class="clue">(optional)</span></label>
+          <input
+            type="number"
+            name="age"
+            id="number"
+            min="10"
+            max="99"
+            class="form-control"
+            placeholder="Age"
+          />
+        </div>
+        <div class="form-group">
+          <label id="number-label" for="number">Phone number</label>
+          <input
+            type="number"
+            name="number"
+            id="number"
+            class="form-control"
+            placeholder="Enter your Phone number"
+            required/>
+        </div>
+        <div class="form-group">
+          <label id="name-label" for="name">Current  address</label>
+          <input
+            type="name"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="Enter your clinic address"
+            required/>
+        </div>
+        <div class="form-group">
+          <label id="text-label" for="name">Patient  id</label>
+          <input
+            type="text"
+            name="text"
+            id="name"
+            class="form-control"
+            placeholder="Enter your Liscence id"
+            required/>
+        </div>
+  
+        <div class="form-group">
+          <p>Any comments or suggestions?</p>
+          <textarea
+            id="comments"
+            class="input-textarea"
+            name="comment"
+            placeholder="Enter your comment here..."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" id="submit" class="submit-button">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
