@@ -8,6 +8,13 @@ app.config["SESSION_PERMANENT"] =  False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
+def init_db():
+    con = sqlite3.connect('database.db')
+    cur = con.cursor()
+    cur.execute('CREATE TABLE IF NOT EXISTS users (user_id INTEGER PRIMARY KEY AUTOINCREMENT, email Text not null , password TEXT not null, name TEXT not null, patient BOOL not null)')
+    con.commit()
+    con.close()
+
 def register_user_to_db(email, password, name, patient):
     con = sqlite3.connect('database.db')
     cur = con.cursor()
@@ -31,7 +38,6 @@ def check_user(email, password):
     res = cur.fetchone()
     con.close()
     return res
-
 
 @app.route("/")
 def index():
@@ -82,4 +88,5 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    init_db()
+    app.run(host='0.0.0.0',debug=False)
