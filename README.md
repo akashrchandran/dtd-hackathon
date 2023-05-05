@@ -9,3 +9,9 @@ To ensure the security of the sensitive information being uploaded, it is import
 - [Anandhu Krishnan G](https://github.com/Anandhu-Krishnan-G)
 - [Nevin V Adatte](https://github.com/Nevin-Adatte)
 - [Abhiram Sanal](https://github.com/abh1-ram)
+
+## Poject Submission
+For project submisson we created a demo website and a presentaion using Canva.
+
+Demo website: https://dtd-hackathon.akashrchandran.repl.co
+Presentation: [Hackathon Presentation.pdf](https://github.com/akashrchandran/dtd-hackathon/blob/main/Hackathon%20Presentation.pdf)
